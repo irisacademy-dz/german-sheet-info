@@ -1,47 +1,413 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cours d'Allemand - IRIS Academy</title>
-  <style>
-    body {
-      background-color: #f9f9f9;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      color: #333;
-    }
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-    }
-    a.button {
-      padding: 0.75rem 1.5rem;
-      background-color: #000;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-    }
-    a.button:hover {
-      background-color: #444;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours Intensifs d'Allemand - Août 2025</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f9ff;
+            color: #333;
+        }
+        .infographic {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #1a3a6a 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        .flag {
+            font-size: 60px;
+            margin-top: 10px;
+        }
+        .date-badge {
+            background: white;
+            color: #1a3a6a;
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        .cta-register {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff6b00;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,107,0,0.3);
+        }
+        .cta-register:hover {
+            background: #e05d00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,107,0,0.4);
+        }
+        .content {
+            padding: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            color: #1a3a6a;
+            border-bottom: 2px solid #e1e8f0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .parcours-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .parcours {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .parcours-header {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+        }
+        .a1-b1 .parcours-header {
+            background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+        }
+        .a2-b2 .parcours-header {
+            background: linear-gradient(135deg, #f9a825 0%, #fbc02d 100%);
+        }
+        .parcours-body {
+            padding: 20px;
+            background: white;
+        }
+        .niveau {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 10px 0;
+            color: #1a3a6a;
+        }
+        .arrow {
+            text-align: center;
+            font-size: 24px;
+            margin: 5px 0;
+            color: #666;
+        }
+        .details {
+            margin-top: 20px;
+        }
+        .details-item {
+            display: flex;
+            margin-bottom: 12px;
+        }
+        .details-icon {
+            margin-right: 10px;
+            color: #1a3a6a;
+            font-weight: bold;
+        }
+        .pricing {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .price-option {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .price-option:last-child {
+            border-bottom: none;
+        }
+        .price-amount {
+            font-weight: 600;
+        }
+        .economy {
+            color: #28a745;
+            font-weight: 600;
+        }
+        .payment-details {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            border-left: 4px solid #1a3a6a;
+        }
+        .payment-title {
+            font-weight: 700;
+            color: #1a3a6a;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .payment-method {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .payment-info {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-family: monospace;
+            font-size: 15px;
+            word-break: break-all;
+        }
+        .account-holder {
+            font-style: italic;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .note {
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #ffc107;
+            font-size: 14px;
+        }
+        .contact {
+            background: #f5f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .contact-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1a3a6a;
+        }
+        .whatsapp-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a3a6a;
+            margin: 15px 0;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-btn:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37,211,102,0.3);
+        }
+        .register-btn {
+            display: inline-block;
+            background: #1a3a6a;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26,58,106,0.2);
+        }
+        .register-btn:hover {
+            background: #122a4f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26,58,106,0.3);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+        .common-details {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .common-details-item {
+            margin-bottom: 10px;
+        }
+        .ccp-image {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .payment-method-box {
+            flex: 1;
+            min-width: 250px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Découvrir notre offre de cours d'allemand</h1>
-  <a 
-    class="button" 
-    href="https://drive.google.com/file/d/1-MggbaMSuNGhzgCT94B2IX_sCk7ICLgF/view?usp=sharing" 
-    target="_blank"
-  >
-    Voir les détails
-  </a>
+    <div class="infographic">
+        <div class="header">
+            <a href="https://forms.office.com/e/L7bDnxwi0U" class="cta-register">S'inscrire Maintenant</a>
+            <h1>Cours Intensifs d'Allemand</h1>
+            <p>Démarrage le 04 Août 2025 - 3 mois de progression</p>
+            <div class="flag">🇩🇪</div>
+            <div class="date-badge">Session du 04.08.2025 au 04.11.2025</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Deux Parcours Adaptés à Votre Niveau</h2>
+                
+                <div class="common-details">
+                    <div class="common-details-item">✅ <strong>3 sessions par semaine</strong> (1h30 en live avec professeur)</div>
+                    <div class="common-details-item">✅ <strong>Durée totale:</strong> 3 mois (semi-intensif)</div>
+                    <div class="common-details-item">✅ <strong>Inclus:</strong> Suivi de progression + Plateforme de pratique</div>
+                </div>
+                
+                <div class="parcours-container">
+                    <div class="parcours a1-b1">
+                        <div class="parcours-header">Parcours Débutant</div>
+                        <div class="parcours-body">
+                            <div class="niveau">A1-1</div>
+                            <div class="arrow">↓</div>
+                            <div class="niveau">A2-1</div>
+                            
+                            <div class="details">
+                                <div class="details-item">
+                                    <span class="details-icon">•</span>
+                                    <span>Pour vrais débutants</span>
+                                </div>
+                                <div class="details-item">
+                                    <span class="details-icon">•</span>
+                                    <span>Acquisition des bases fondamentales</span>
+                                </div>
+                                <div class="details-item">
+                                    <span class="details-icon">•</span>
+                                    <span>Communication quotidienne essentielle</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="parcours a2-b2">
+                        <div class="parcours-header">Parcours Débutant Avancé</div>
+                        <div class="parcours-body">
+                            <div class="niveau">A2-1</div>
+                            <div class="arrow">↓</div>
+                            <div class="niveau">B1-1</div>
+                            
+                            <div class="details">
+                                <div class="details-item">
+                                    <span class="details-icon">•</span>
+                                    <span>Pour apprenants avec bases en allemand</span>
+                                </div>
+                                <div class="details-item">
+                                    <span class="details-icon">•</span>
+                                    <span>Consolidation et approfondissement</span>
+                                </div>
+                                <div class="details-item">
+                                    <span class="details-icon">•</span>
+                                    <span>Communication plus fluide et précise</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pricing">
+                    <h3>Options de Paiement :</h3>
+                    <div class="price-option">
+                        <span>Mensuel :</span>
+                        <span class="price-amount">6 000 DZD/mois</span>
+                    </div>
+                    <div class="price-option">
+                        <span>Paiement total (3 mois) :</span>
+                        <span class="price-amount">15 000 DZD <span class="economy">(Économisez 3 000 DZD)</span></span>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <div class="payment-method-box">
+                        <div class="payment-details">
+                            <div class="payment-title">Détails pour Paiement via Baridi Mob</div>
+                            <div class="payment-method">Numéro de compte / Référence :</div>
+                            <div class="payment-info">00799999002064155065</div>
+                            <div class="account-holder">Titulaire du compte : Mr. Ammar Younes</div>
+                        </div>
+                    </div>
+                    <div class="payment-method-box">
+                        <div class="payment-details">
+                            <div class="payment-title">Détails CCP</div>
+                            <img src="Payment CCP.png" alt="Détails CCP" class="ccp-image">
+                            <div class="payment-info">002064155065</div>
+                            <div class="account-holder">M.YOUNES AMMAR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="note">
+                <strong>Important :</strong> 
+                <ul>
+                    <li>Test de niveau obligatoire avant l'inscription</li>
+                    <li>La preuve de paiement doit être envoyée sous 24h via WhatsApp</li>
+                    <li>Passé ce délai, l'inscription sera annulée</li>
+                </ul>
+            </div>
+            
+            <div class="contact">
+                <div class="contact-title">Contactez-nous pour vous inscrire :</div>
+                <div class="whatsapp-number">+213 795 36 90 06</div>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://wa.me/213795369006" class="whatsapp-btn">Envoyer la preuve de paiement</a>
+                    <a href="https://forms.office.com/e/L7bDnxwi0U" class="register-btn">S'inscrire en Ligne</a>
+                </div>
+                <p style="margin-top: 15px;font-size: 14px;">(Envoyez le screenshot du paiement via WhatsApp)</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Places limitées - Inscriptions ouvertes jusqu'au 02.08.2025
+        </div>
+    </div>
 </body>
 </html>
